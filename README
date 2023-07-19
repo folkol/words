@@ -1,3 +1,7 @@
 # Words
 
 cli tool for extracting words form stdin
+
+## Install
+
+cargo install --path .
