@@ -13,9 +13,9 @@ fn main() {
 fn print_words(line: &String, out: &mut BufWriter<StdoutLock>) {
     for word in line.unicode_words() {
         match writeln!(out, "{word}") {
+            Ok(_) => {}
             Err(e) if e.kind() == BrokenPipe => { std::process::exit(0) }
             Err(_) => panic!("Unexpected error trying to write word"),
-            _ => break
         }
     }
 }
